@@ -5,6 +5,10 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    friendCount: Int
+    posts: [Post]
+    friends: [User]
+
   }
   type Post {
     _id: ID
@@ -38,6 +42,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     addPost(postText: String!): Post
     addComment(commentId: ID!, commentBody: String!): Post
+    addFriend(friendId: ID!): User
   }
 `;
 

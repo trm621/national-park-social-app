@@ -20,18 +20,26 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
+    bio: {
+      type: String,
+      required: false
+    },
+    donation: { //DO I NEED TO MAKE A DONATION COLLECTION AND REFERENCE IT IN THE USER SCHEMA?
+      type: Boolean,
+      amount: Number,
+    },
     posts: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Post'
       }
     ],
-    // friends: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User'
-    //   }
-    // ]
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ]
   },
   {
     toJSON: {
