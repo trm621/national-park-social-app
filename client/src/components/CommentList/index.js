@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// look up way to make comments collapsable
+
 const CommentList = ({ comments }) => {
   return (
     <div className="card mb-3">
