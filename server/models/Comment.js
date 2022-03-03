@@ -25,4 +25,8 @@ const commentSchema = new Schema(
   }
 );
 
+commentSchema.virtual('commentCount').get(function() {
+  return this.comments.length;
+});
+
 module.exports = commentSchema;

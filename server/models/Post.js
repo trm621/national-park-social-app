@@ -31,8 +31,8 @@ const postSchema = new Schema(
   }
 );
 
-postSchema.virtual('reactionCount').get(function() {
-  return this.reactions.length;
+postSchema.virtual('commentCount').get(function() {
+  return this.comments.length;
 });
 
 const Post = model('Post', postSchema);
