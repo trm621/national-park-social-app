@@ -26,6 +26,7 @@ const userSchema = new Schema(
     },
     donation: {
       type: Boolean,
+      default: false
     },
     posts: [
       {
