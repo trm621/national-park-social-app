@@ -28,8 +28,7 @@ module.exports = {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
     } catch (err) {
-      console.log(err);
-      // return res.status(400).json({ message: 'invalid token!' });
+      console.log(err);//WHY DOES THIS THROW AN ERROR EVERY TIME SOMEONE SIGNS UP??
     }
 
     return req;
