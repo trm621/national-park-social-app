@@ -20,7 +20,7 @@ const CommentForm = ({ commentId }) => {
       
     try {
       await addComment({
-        variables: { commentBody, postId }
+        variables: { commentBody, commentId }
       });
         // clear form value
         setText('');
@@ -39,7 +39,7 @@ return (
     <form className="flex-row justify-center justify-space-between-md align-stretch"
     onSubmit={handleFormSubmit}>
       <textarea
-        placeholder="Leave a comment to this post..."
+        placeholder="Leave a comment on this post..."
         value={commentBody}
         className="form-input col-12 col-md-9"
         onChange={handleChange}
