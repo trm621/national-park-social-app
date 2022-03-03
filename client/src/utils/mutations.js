@@ -38,3 +38,18 @@ export const ADD_COMMENT = gql`
     }
   }
 `
+
+export const ADD_POST = gql`
+mutation addPost($postText: String!) {
+  addPost(postText: $postText) {
+    _id
+    postText
+    createdAt
+    username
+    commentCount
+    comments {
+      _id
+    }
+  }
+}
+`;

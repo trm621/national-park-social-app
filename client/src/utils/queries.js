@@ -18,49 +18,64 @@ export const QUERY_POST = gql`
 `;
 
 export const QUERY_USER = gql`
-    query user($username: String!) {
-        user(username: $username) {
-            _id
-            username
-            email
-            comments {
-                _id
-                postText
-                createdAt
-                commentCount
-            }
-        }
+query user($username: String!) {
+  user(username: $username) {
+    _id
+    username
+    email
+    friendCount
+    friends {
+      _id
+      username
     }
-`
+    posts {
+      _id
+      postText
+      createdAt
+      commentCount
+    }
+  }
+}
+`;
 
 export const QUERY_ME = gql`
 {
-    me {
+  me {
+    _id
+    username
+    email
+    friendCount
+    posts {
       _id
-      username
-      email
-      posts {
+      postText
+      createdAt
+      commentCount
+      comments {
         _id
-        postText
         createdAt
-        commentCount
-        comments {
-          _id
-          createdAt
-          commentBody
-          username
-        }
+        commentBody
+        username
       }
     }
+    friends {
+      _id
+      username
+    }
   }
+}
 `;
 
 export const QUERY_ME_BASIC = gql`
 {
-    me {
+  me {
+    _id
+    username
+    email
+    friendCount
+    friends {
       _id
       username
-      email
     }
   }
-`
+}
+`;
