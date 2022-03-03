@@ -28,7 +28,7 @@ module.exports = {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
     } catch (err) {
-      console.log(err);//WHY DOES THIS THROW AN ERROR EVERY TIME SOMEONE SIGNS UP??
+      console.log(err);
     }
 
     return req;

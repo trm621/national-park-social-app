@@ -9,7 +9,7 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
           .populate('posts')
-          // .populate('friends');
+          .populate('friends');
 
         return userData;
       }
@@ -20,12 +20,12 @@ const resolvers = {
       return User.find()
         .select('-__v -password')
         .populate('posts')
-        // .populate('friends');
+        .populate('friends');
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
-        // .populate('friends')
+        .populate('friends')
         .populate('posts');
     },
     posts: async (parent, { username }) => {
@@ -91,6 +91,22 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
+
+    // addPhoto: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const post = await Post.create({ ...args, username: context.user.username });
+
+    //     await User.findByIdAndUpdate(
+    //       { _id: context.user._id },
+    //       { $push: { posts: post._id } },
+    //       { new: true }
+    //     );
+
+    //     return post;
+    //   }
+
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
     
     addFriend: async (parent, { friendId }, context) => {
       if (context.user) {
