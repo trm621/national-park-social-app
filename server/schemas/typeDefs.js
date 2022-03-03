@@ -5,6 +5,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    donation: Boolean
     friendCount: Int
     posts: [Post]
     friends: [User]
@@ -15,6 +16,7 @@ const typeDefs = gql`
     postText: String
     createdAt: String
     username: String
+    photo: String
     commentCount: Int
     comments: [Comment]
   }

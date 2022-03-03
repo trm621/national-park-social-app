@@ -19,6 +19,9 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
+    photo: {
+      type: String
+    },
     comments: [commentSchema]
   },
   {

@@ -24,9 +24,8 @@ const userSchema = new Schema(
       type: String,
       required: false
     },
-    donation: { //DO I NEED TO MAKE A DONATION COLLECTION AND REFERENCE IT IN THE USER SCHEMA?
+    donation: {
       type: Boolean,
-      amount: Number,
     },
     posts: [
       {
