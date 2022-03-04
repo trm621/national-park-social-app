@@ -4,19 +4,20 @@ const { ApolloServer } = require("apollo-server-express");
 
 // import typeDefs and resolvers
 const { typeDefs, resolvers } = require("./schemas");
-const path = require("path");
+//const path = require("path");
 const db = require("./config/connection");
-const { authMiddleware } = require("./utils/auth");
+//const { authMiddleware } = require("./utils/auth");
 
-const app = express();
 const PORT = process.env.PORT || 3001;
+const app = express();
+
 
 const startServer = async () => {
   //create a new Apollo Server and pass in schema data
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: authMiddleware,
+   // context: authMiddleware,
   });
   // Start the Apollo server
   await server.start();
@@ -31,16 +32,16 @@ const startServer = async () => {
 // Initialize the Apollo server
 startServer();
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+ app.use(express.urlencoded({ extended: true }));
+ app.use(express.json());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "../client/build")));
+// }
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 
 db.once("open", () => {

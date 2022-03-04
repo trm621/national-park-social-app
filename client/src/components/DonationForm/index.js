@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
+// not sure if we are using Apollo?
 import { useLazyQuery } from '@apollo/client';
-import { QUERY_CHECKOUT } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import CartItem from '../CartItem';
+// Bringing in basic user information to preload donation information
+import { QUERY_ME_BASIC } from '../../utils/queries';
 import Auth from '../../utils/auth';
+// do we need a global state for logged in or not?
 import { useStoreContext } from '../../utils/GlobalState';
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
