@@ -12,8 +12,8 @@ import Feed from './pages/Feed';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 //import Nav from './components/Nav';
-import { Provider } from 'react-redux';
-//import store from './utils/store';
+// import { Provider } from 'react-redux';
+// import store from './utils/store';
 
 
 const httpLink = createHttpLink({
@@ -37,26 +37,25 @@ const client = new ApolloClient({
 
 
 function App() {
-  return (
-    <ApolloProvider client={client}>
-    <Router>
-      <div>
-        <Provider store={store}>
-          <Nav />
-          <p>Test</p>
-          <Switch>
-            <Route exact path="/" component={Feed} />
-            <Route exact path="/signup" component={SignupForm} />
-            <Route exact path="/login" component={LoginForm} />
-            <Route exact path="/donation" component={DonationForm} />
-            <Route exact path="/post" component={PostForm} />
-            <Route component={NoMatch} />
-          </Switch>
-        </Provider>
-      </div>
-    </Router>
-  </ApolloProvider>
-  );
+  // return (
+  //   <ApolloProvider client={client}>
+  // //   <Router>
+  // //     <div>
+  // //       {/* <Provider store={store}> */}
+  // //         <p>HELLO!!!</p>
+  // //         {/* <Switch> */}
+  // //           <Route exact path="/" component={Feed} />
+  // //           {/* <Route exact path="/signup" component={SignupForm} />
+  // //           <Route exact path="/login" component={LoginForm} />
+  // //           {/* <Route exact path="/donation" component={DonationForm} /> */}
+  // //           {/* <Route exact path="/post" component={PostForm} /> */}
+  // //           {/* <Route component={NoMatch} /> */}
+  // //         {/* </Switch> */}
+  // //       {/* </Provider> */}
+  // //     </div>
+  // //   </Router>
+  // // </ApolloProvider>
+  // );
 }
 
 export default App;
