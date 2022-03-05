@@ -8,10 +8,17 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import Header from './components/header';
+import Footer from './components/footer';
+
 import Feed from './pages/Feed';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-//import Nav from './components/Nav';
+import Donation from './pages/Donation';
+import Landing from './pages/Landing';
+import Profile from './pages/Profile';
+import SinglePost from './pages/SinglePost';
+import NoMatch from './pages/NoMatch';
 // import { Provider } from 'react-redux';
 // import store from './utils/store';
 
@@ -37,25 +44,27 @@ const client = new ApolloClient({
 
 
 function App() {
-  // return (
-  //   <ApolloProvider client={client}>
-  // //   <Router>
-  // //     <div>
-  // //       {/* <Provider store={store}> */}
-  // //         <p>HELLO!!!</p>
-  // //         {/* <Switch> */}
-  // //           <Route exact path="/" component={Feed} />
-  // //           {/* <Route exact path="/signup" component={SignupForm} />
-  // //           <Route exact path="/login" component={LoginForm} />
-  // //           {/* <Route exact path="/donation" component={DonationForm} /> */}
-  // //           {/* <Route exact path="/post" component={PostForm} /> */}
-  // //           {/* <Route component={NoMatch} /> */}
-  // //         {/* </Switch> */}
-  // //       {/* </Provider> */}
-  // //     </div>
-  // //   </Router>
-  // // </ApolloProvider>
-  // );
+  return (
+    <ApolloProvider client={client}>
+     <Router>
+       <div>
+         {/* <Provider store={store}> */}
+           <Switch>
+             <Route exact path="/" component={Feed} />
+             <Route exact path="/signup" component={Signup} />
+             <Route exact path="/login" component={Login} />
+             <Route exact path="/donation" component={Donation} />
+             <Route exact path="/profile" component={Profile} />
+             <Route exact path="/home" component={Landing} />
+             <Route exact path="/singlepost" component={SinglePost} />
+
+             <Route component={NoMatch} />
+           </Switch>
+         {/* </Provider> */}
+       </div>
+     </Router>
+   </ApolloProvider>
+  );
 }
 
 export default App;
