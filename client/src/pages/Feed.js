@@ -5,7 +5,7 @@ import Feed from '../components/Feed';
 import PostForm from '../components/PostForm';
 import Auth from '../utils/auth';
 
-const Feed = () => {
+const FeedPage = () => {
     
     const { loading, data } = useQuery(QUERY_POST);
   
@@ -26,11 +26,11 @@ const Feed = () => {
             {loading ? (
               <div>Loading...</div>
             ) : (
-              <PostList posts={posts} title="POSTS TITLE" />
+              <Feed posts={posts} title="POSTS TITLE" />
             )}
           </div>
         </div>
       </main>
     );
   };
-  export default Feed;
+  export default FeedPage;
