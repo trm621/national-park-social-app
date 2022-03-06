@@ -51,15 +51,15 @@ function App() {
          <Header/>
          <div>
            <Routes>
-             <Route path="/" element={Feed} />
-             <Route path="/signup" element={Signup} />
-             <Route path="/login" element={Login} />
-             <Route path="/donation" element={Donation} />
-             <Route path="/profile/:username?" element={Profile} />
-             <Route path="/home" element={Landing} />
-             <Route path="/singlepost/:id" element={SinglePost} />
+             <Route path="/" element={<Feed/>} />
+             <Route path="/signup" element={<Signup/>} />
+             <Route path="/login" element={<Login/>} />
+             <Route path="/donations" element={<Donation/>} />
+             <Route path="/profile/:username?" element={<Profile/>} />
+             <Route path="/about-us" element={<Landing/>} />
+             <Route path="/singlepost/:id" element={<SinglePost/>} />
 
-             <Route path="*" element={NoMatch} />
+             <Route path="*" element={<NoMatch/>} />
            </Routes>
           </div>
           <Footer/>
