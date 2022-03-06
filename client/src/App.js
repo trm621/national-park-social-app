@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import * as React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,10 +8,17 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 import Feed from './pages/Feed';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-//import Nav from './components/Nav';
+import Donation from './pages/Donation';
+import Landing from './pages/Landing';
+import Profile from './pages/Profile';
+import SinglePost from './pages/SinglePost';
+import NoMatch from './pages/NoMatch';
 // import { Provider } from 'react-redux';
 // import store from './utils/store';
 
@@ -37,25 +44,29 @@ const client = new ApolloClient({
 
 
 function App() {
-  // return (
-  //   <ApolloProvider client={client}>
-  // //   <Router>
-  // //     <div>
-  // //       {/* <Provider store={store}> */}
-  // //         <p>HELLO!!!</p>
-  // //         {/* <Switch> */}
-  // //           <Route exact path="/" component={Feed} />
-  // //           {/* <Route exact path="/signup" component={SignupForm} />
-  // //           <Route exact path="/login" component={LoginForm} />
-  // //           {/* <Route exact path="/donation" component={DonationForm} /> */}
-  // //           {/* <Route exact path="/post" component={PostForm} /> */}
-  // //           {/* <Route component={NoMatch} /> */}
-  // //         {/* </Switch> */}
-  // //       {/* </Provider> */}
-  // //     </div>
-  // //   </Router>
-  // // </ApolloProvider>
-  // );
+  return (
+    <ApolloProvider client={client}>
+     <BrowserRouter>
+       <div>
+         <Header/>
+         <div>
+           <Routes>
+             <Route path="/" element={<Feed/>} />
+             <Route path="/signup" element={<Signup/>} />
+             <Route path="/login" element={<Login/>} />
+             <Route path="/donations" element={<Donation/>} />
+             <Route path="/profile/:username?" element={<Profile/>} />
+             <Route path="/about-us" element={<Landing/>} />
+             <Route path="/singlepost/:id" element={<SinglePost/>} />
+
+             <Route path="*" element={<NoMatch/>} />
+           </Routes>
+          </div>
+          <Footer/>
+       </div>
+     </BrowserRouter>
+   </ApolloProvider>
+  );
 }
 
 export default App;

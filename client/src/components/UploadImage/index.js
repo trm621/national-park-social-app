@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './App.css';
+
 
 function UploadImage() {
   // sets up the image to be blank when entering screen
@@ -24,7 +24,6 @@ function UploadImage() {
       fileReader.readAsDataURL(file);
       
 
-
       fileReader.onload = () => {
         resolve(fileReader.result);
       };
@@ -34,13 +33,15 @@ function UploadImage() {
       };
     });
   };
+  
+
   return (
-    <div className="App">
+    <div className="imageupload">
       <input type="file" onChange={(e) => {
         uploadImage(e);
       }}
       />
-      <br></br>
+     <br></br>
       <img src={baseImage} height = "200px" alt="postphoto"/>
     </div>
   );
