@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+# Trail Talk
+### Trail Talk App will help you enjoy your National Park Visit even more.  Chatting with others who have experienced the park before then create a plan to enjoy the magnificence of what nature has to offer. Trail talk offers the features of a social application, posting photos, connecting to friends and family and getting feedback on your posts.  Given the size and opportunity for exploration at each park, you will never stop exploring national parks and will share your discovery in nature with those whose love nature as much as you do.  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![screenshot](/server/assets/)
 
-In the project directory, you can run:
+## Installation/ Usage
+  * Deployed application via Heroku  https://agile-beach-04813.herokuapp.com/
+  * Git Hub Repo: https://github.com/trm621/national-park-social-app
 
-### `npm start`
+## Features
+ * Post your latest National Park Visit- include a photo, discuss the plan for a day trip or mutiple days, talk about the best scenic spot for the perfect instagram photo or a comfortable spot to enjoy the lunch you packed.  
+ * Connect to Visit Parks with Friends and Others- coordinating a trip with your extended family or your college roomates, make sure nothing is forgotten and all the preferences of trail snack are covered, make new friends for those who want to connect with others to share the experience.  
+ * Comment on Great Photos or Visitor Tips- Capture the sunrise over a beautiful mountain top share on Trail Talk, find a wildflower you can't identify then post a photo to ask others to help identify.
+ * Connections to National Park Resources- did you know you can watch several activities live at national parks, click our links to explore interesting resources all in one place.
+ * Make a Donation to Save The Parks- keep the parks a beautiful place to visit for years to come.  Every samll bit helps to assure the parks stay as beautiful as they can be.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Future Enhancements
+ * Create a trail bucket list for future visits and plan those trips out
+ * A badge system which increments with each park visit
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contact/Questions
+  This project was a collaboration of the following people: 
+  * GitHub: https://github.com/jtboyman
+  * GitHub: https://github.com/LeahFusari
+  * GitHub: https://github.com/dawnleblanc11/
+  * GitHub: https://github.com/trm621
+  
+  
 
-### `npm test`
+ ## Technology <br> 
+  * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  * MERN Stack: React front End, MongoDB database and Node.js/ Express.js server and API
+  * HTML/ CSS/ JS 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Packages Utilized
+ * Concurrently 
+ * Apollo-server-express
+ * Bcrypt
+ * Express
+ * Faker
+ * Graphql
+ * Jsonwebtoken
+ * Mongoose
+ * Apollo Client
+ * React Scripts, React DOM, React Router DOM
+ * Stripe
+ * JWT- Decode
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
