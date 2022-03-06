@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import * as React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,8 +8,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Header from './components/header';
-import Footer from './components/footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 import Feed from './pages/Feed';
 import Login from './pages/Login';
@@ -46,23 +46,27 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-     <Router>
+     <BrowserRouter>
        <div>
          {/* <Provider store={store}> */}
-           <Switch>
-             <Route exact path="/" component={Feed} />
-             <Route exact path="/signup" component={Signup} />
-             <Route exact path="/login" component={Login} />
-             <Route exact path="/donation" component={Donation} />
-             <Route exact path="/profile" component={Profile} />
-             <Route exact path="/home" component={Landing} />
-             <Route exact path="/singlepost" component={SinglePost} />
+         <Header/>
+         <div>
+           <Routes>
+             <Route path="/" element={Feed} />
+             <Route path="/signup" element={Signup} />
+             <Route path="/login" element={Login} />
+             <Route path="/donation" element={Donation} />
+             <Route path="/profile/:username?" element={Profile} />
+             <Route path="/home" element={Landing} />
+             <Route path="/singlepost/:id" element={SinglePost} />
 
-             <Route component={NoMatch} />
-           </Switch>
+             <Route element={NoMatch} />
+           </Routes>
+          </div>
+          <Footer/>
          {/* </Provider> */}
        </div>
-     </Router>
+     </BrowserRouter>
    </ApolloProvider>
   );
 }
