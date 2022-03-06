@@ -1,12 +1,12 @@
 import React from 'react';
-import { Redirect, useParams } from 'react-router-dom';
+import { /*Redirect,*/ useParams } from 'react-router-dom';
 
-import PostList from '../components/Feed';
+import Feed from '../components/Feed';
 import FriendList from '../components/FriendList';
 
 import { useQuery } from '@apollo/client';
-import { QUERY_POST, QUERY_USER,  QUERY_ME } from '../utils/queries';
-import Auth from '../utils/auth';
+import { QUERY_USER,  QUERY_ME } from '../utils/queries';
+// import Auth from '../utils/auth';
 
 const Profile = (props) => {
   const { username: userParam } = useParams();
@@ -17,10 +17,10 @@ const Profile = (props) => {
 
   const user = data?.me || data?.user || {};
 
-  // redirect to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Redirect to="/profile" />;
-  }
+  // // redirect to personal profile page if username is yours
+  // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  //   return <Redirect to="/profile" />;
+  // }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -45,7 +45,7 @@ const Profile = (props) => {
 
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
-          <PostList
+          <Feed
             posts={user.posts}
             title={`${user.username}'s posts...`}
           />
