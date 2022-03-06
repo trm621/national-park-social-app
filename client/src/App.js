@@ -48,7 +48,6 @@ function App() {
     <ApolloProvider client={client}>
      <BrowserRouter>
        <div>
-         {/* <Provider store={store}> */}
          <Header/>
          <div>
            <Routes>
@@ -60,11 +59,10 @@ function App() {
              <Route path="/home" element={Landing} />
              <Route path="/singlepost/:id" element={SinglePost} />
 
-             <Route element={NoMatch} />
+             <Route path="*" element={NoMatch} />
            </Routes>
           </div>
           <Footer/>
-         {/* </Provider> */}
        </div>
      </BrowserRouter>
    </ApolloProvider>
