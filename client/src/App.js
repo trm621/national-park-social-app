@@ -19,6 +19,7 @@ import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 import SinglePost from './pages/SinglePost';
 import NoMatch from './pages/NoMatch';
+import UploadImage from './components/UploadImage'
 // import { Provider } from 'react-redux';
 // import store from './utils/store';
 
@@ -58,6 +59,7 @@ function App() {
              <Route path="/profile/:username?" element={<Profile/>} />
              <Route path="/about-us" element={<Landing/>} />
              <Route path="/singlepost/:id" element={<SinglePost/>} />
+             <Route path="/uploadimage" element={<UploadImage/>} />
 
              <Route path="*" element={<NoMatch/>} />
            </Routes>
