@@ -3,7 +3,8 @@ import { useMutation } from '@apollo/client';
 import { ADD_POST } from '../../utils/mutations';
 import { QUERY_POST, QUERY_ME } from '../../utils/queries';
 
-const PostForm = () => {
+
+const PostForm = (props) => {
     const [postText, setText] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
 
@@ -28,12 +29,12 @@ const PostForm = () => {
         }
       });
 
-    const handleChange = event => {
-        if (event.target.value.length <= 280) {
-          setText(event.target.value);
-          setCharacterCount(event.target.value.length);
-        }
-      };
+    // const handleChange = event => {
+    //     if (event.target.value.length <= 280) {
+    //       setText(event.target.value);
+    //       setCharacterCount(event.target.value.length);
+    //     }
+    //   };
       const handleFormSubmit = async event => {
         event.preventDefault();
       
@@ -49,6 +50,7 @@ const PostForm = () => {
           console.error(e);
         }
       };
+      // check why form input doesnot appear
   return (
     <div>
         <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
@@ -58,11 +60,11 @@ const PostForm = () => {
         <form
         className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}
->      <textarea
+>       <textarea
         placeholder="Here's a new post..."
         value={postText}
         className="form-input col-12 col-md-9"
-        onChange={handleChange}
+        onChange={props.handleChange}
         ></textarea>  
         <button className="btn col-12 col-md-3" type="submit">
           Submit
