@@ -8,18 +8,18 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+// import Header from './components/Header';
+// import Footer from './components/Footer';
 
-import Feed from './pages/Feed';
-import Login from './pages/Login';
+// import Feed from './pages/Feed';
+// import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Donation from './pages/Donation';
-import Landing from './pages/Landing';
-import Profile from './pages/Profile';
-import SinglePost from './pages/SinglePost';
+// import Donation from './pages/Donation';
+// import Landing from './pages/Landing';
+// import Profile from './pages/Profile';
+// import SinglePost from './pages/SinglePost';
 import NoMatch from './pages/NoMatch';
-import UploadImage from './components/UploadImage'
+// import UploadImage from './components/UploadImage'
 // import { Provider } from 'react-redux';
 // import store from './utils/store';
 
@@ -49,22 +49,22 @@ function App() {
     <ApolloProvider client={client}>
      <BrowserRouter>
        <div>
-         <Header/>
+         {/* <Header/> */}
          <div>
            <Routes>
-             <Route path="/" element={<Feed/>} />
+             {/* <Route path="/" element={<Feed/>} /> */}
              <Route path="/signup" element={<Signup/>} />
-             <Route path="/login" element={<Login/>} />
+             {/* <Route path="/login" element={<Login/>} />
              <Route path="/donations" element={<Donation/>} />
              <Route path="/profile/:username?" element={<Profile/>} />
              <Route path="/about-us" element={<Landing/>} />
              <Route path="/singlepost/:id" element={<SinglePost/>} />
-             <Route path="/uploadimage" element={<UploadImage/>} />
+             <Route path="/uploadimage" element={<UploadImage/>} /> */}
 
              <Route path="*" element={<NoMatch/>} />
            </Routes>
           </div>
-          <Footer/>
+          {/* <Footer/> */}
        </div>
      </BrowserRouter>
    </ApolloProvider>
