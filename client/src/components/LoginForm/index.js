@@ -45,6 +45,7 @@ const LoginForm = () => {
       email: '',
       password: '',
     });
+    console.log(userFormData);
   };
 
   return (

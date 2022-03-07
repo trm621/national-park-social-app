@@ -1,7 +1,7 @@
 //import { Token } from 'graphql';
 import React from 'react';
 //import { v4 as uuidv4 } from 'uuid';
-import StripeCheckout from 'react-stripe-checkout';
+// import StripeCheckout from 'react-stripe-checkout';
 //import DonationForm from './components/DonationForm'
 
 // import Auth from '../utils/auth';
@@ -31,9 +31,9 @@ const Donation = () => {
        {/* <button type="submit" id="checkout-button">Checkout</button> */}
        </form>
        {/* <h3>Did you forget to complete your donation?</h3> */}
-       <StripeCheckout stripeKey="" token="" name="Donation">
+       {/* <StripeCheckout stripeKey="" token="" name="Donation">
          <button>Support a Park Today</button>
-       </StripeCheckout>
+       </StripeCheckout> */}
        <h3>We appreciate your donation!</h3>
     </div>
   );
