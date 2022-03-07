@@ -9,7 +9,6 @@ const typeDefs = gql`
     friendCount: Int
     posts: [Post]
     friends: [User]
-
   }
   type Post {
     _id: ID
