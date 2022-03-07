@@ -13,6 +13,10 @@ const FeedPage = () => {
   
     const loggedIn = Auth.loggedIn();
   
+    // if data isn't here yet, say so
+  if (loading) {
+    return <h2>LOADING...</h2>;
+  }
   
     return (
       <main>

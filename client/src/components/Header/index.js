@@ -27,6 +27,7 @@ const Header = () => {
       <Link to="/login">Login/Signup</Link>
       <Link to="/donations">Donations</Link>
       <Link to="/about-us">About Us</Link>
+      <Link to="/newpost">Add a Post</Link>
       </>
   )}
 </nav>

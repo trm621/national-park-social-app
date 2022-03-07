@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
 const Signup = () => {
   // set inital form state
-  const [userFormData, setUserFormData] = useState({ username: '',email: '', password: '' });
+  const [userFormData, setUserFormData] = useState({ username: '',email: '', password: '', bio: '' });
   
   
   const [addUser, {error}] = useMutation(ADD_USER);
@@ -28,7 +28,6 @@ const Signup = () => {
        const { data } = await addUser({
          variables: {...userFormData},
        });
-       console.log(data)
        Auth.login(data.addUser.token);
     } catch (err) {
       console.error(error);
@@ -36,11 +35,9 @@ const Signup = () => {
     };
     
 
-  
-
   return (
     <div className="container my-1">
-      {/* <Link to="/login">← Go to Login</Link> */}
+      <Link to="/login">← Go to Login</Link>
 
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>
@@ -71,6 +68,16 @@ const Signup = () => {
             name="password"
             type="password"
             id="pwd"
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="pwd">Tell us why you like national parks?</label>
+          <input
+            placeholder="Nature is wonderful"
+            name="bio"
+            type="bio"
+            id="bio"
             onChange={handleInputChange}
           />
         </div>
