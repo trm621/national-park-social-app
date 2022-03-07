@@ -1,5 +1,5 @@
 import React from 'react';
-import PostList from '../components/Feed';
+import PostList from '../components/PostList';
 import FriendList from '../components/FriendList';
 
 import Auth from '../utils/auth';
@@ -12,7 +12,7 @@ const Landing = () => {
   const posts = data?.posts || [];
 
   const loggedIn = Auth.loggedIn();
-
+// should be able to add a comment on landing page?
   return (
     <main>
       <div className="flex-row justify-space-between">

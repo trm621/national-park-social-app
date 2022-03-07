@@ -16,11 +16,10 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Donation from "./pages/Donation";
 import Landing from "./pages/Landing";
-import Profile from "./pages/Profile";
+//import Profile from "./pages/Profile";
 import SinglePost from "./pages/SinglePost";
 import NoMatch from "./pages/NoMatch";
-import UploadImage from "./components/UploadImage";
-import PostForm from "./components/PostForm"; 
+import UserMain from "./pages/UserMain";
 //import { Provider } from 'react-redux';
 //import store from './utils/store';
 
@@ -51,17 +50,13 @@ function App() {
           <Header />
           <div>
             <Routes>
-              <Route path="/" element={<Feed />} />
+              <Route path="/" element={<Landing />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/donations" element={<Donation />} />
-              <Route path="/profile/:username?" element={<Profile />} />
-              <Route path="/about-us" element={<Landing />} />
               <Route path="/singlepost/:id" element={<SinglePost />} />
-              <Route path="/newpost" element={<PostForm />} />
-              <Route path="/uploadimage" element={<UploadImage />} />
+              <Route path="/usermain/:username?" element={<UserMain />} />
               <Route path="/feed" element={<Feed />} />
-
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { /*Redirect,*/ useParams } from 'react-router-dom';
 
-import Feed from '../components/Feed';
-import FriendList from '../components/FriendList';
+import PostList from '../PostList';
+import FriendList from '../FriendList';
 
 import { useQuery } from '@apollo/client';
-import { QUERY_USER,  QUERY_ME } from '../utils/queries';
+import { QUERY_USER,  QUERY_ME } from '../../utils/queries';
 // import Auth from '../utils/auth';
 
-const Profile = (props) => {
+const MyProfile = () => {
   const { username: userParam } = useParams();
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -45,7 +45,7 @@ const Profile = (props) => {
 
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
-          <Feed
+          <PostList
             posts={user.posts}
             title={`${user.username}'s posts...`}
           />
@@ -63,4 +63,4 @@ const Profile = (props) => {
   );
 };
 
-export default Profile;
+export default MyProfile;
