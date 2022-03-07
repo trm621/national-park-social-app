@@ -1,39 +1,39 @@
-import * as React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import * as React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
-// import Header from './components/Header';
-// import Footer from './components/Footer';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-// import Feed from './pages/Feed';
-// import Login from './pages/Login';
-import Signup from './pages/Signup';
-// import Donation from './pages/Donation';
-// import Landing from './pages/Landing';
-// import Profile from './pages/Profile';
-// import SinglePost from './pages/SinglePost';
-import NoMatch from './pages/NoMatch';
-// import UploadImage from './components/UploadImage'
-// import { Provider } from 'react-redux';
-// import store from './utils/store';
-
+import Feed from "./pages/Feed";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Donation from "./pages/Donation";
+import Landing from "./pages/Landing";
+import Profile from "./pages/Profile";
+import SinglePost from "./pages/SinglePost";
+import NoMatch from "./pages/NoMatch";
+import UploadImage from "./components/UploadImage";
+import PostForm from "./components/PostForm"; 
+//import { Provider } from 'react-redux';
+//import store from './utils/store';
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -43,31 +43,32 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
   return (
     <ApolloProvider client={client}>
-     <BrowserRouter>
-       <div>
-         {/* <Header/> */}
-         <div>
-           <Routes>
-             {/* <Route path="/" element={<Feed/>} /> */}
-             <Route path="/signup" element={<Signup/>} />
-             {/* <Route path="/login" element={<Login/>} />
-             <Route path="/donations" element={<Donation/>} />
-             <Route path="/profile/:username?" element={<Profile/>} />
-             <Route path="/about-us" element={<Landing/>} />
-             <Route path="/singlepost/:id" element={<SinglePost/>} />
-             <Route path="/uploadimage" element={<UploadImage/>} /> */}
+      <BrowserRouter>
+        <div>
+          <Header />
+          <div>
+            <Routes>
+              <Route path="/" element={<Feed />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/donations" element={<Donation />} />
+              <Route path="/profile/:username?" element={<Profile />} />
+              <Route path="/about-us" element={<Landing />} />
+              <Route path="/singlepost/:id" element={<SinglePost />} />
+              <Route path="/newpost" element={<PostForm />} />
+              <Route path="/uploadimage" element={<UploadImage />} />
+              <Route path="/feed" element={<Feed />} />
 
-             <Route path="*" element={<NoMatch/>} />
-           </Routes>
+              <Route path="*" element={<NoMatch />} />
+            </Routes>
           </div>
-          {/* <Footer/> */}
-       </div>
-     </BrowserRouter>
-   </ApolloProvider>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </ApolloProvider>
   );
 }
 

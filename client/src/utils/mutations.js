@@ -12,9 +12,10 @@ export const LOGIN_USER = gql`
   }
 `;
 // ADD_USER will execute the addUser mutation.
+// only askign for bio upon first signup- may want to offer to change that later
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($username: String!, $email: String!, $password: String!, $bio:bio) {
+    addUser(username: $username, email: $email, password: $password, bio: $bio) {
       token
       user {
         _id
