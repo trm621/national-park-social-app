@@ -10,14 +10,14 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
+    <header className="header">
+      <div className="header-container">
         <Link to="/">
           <h1>Welcome to Trail Talk</h1>
-          <h3>See what visitors to National Parks are saying today</h3>
+          <h3>See what visitors to National Parks are saying today!</h3>
         </Link>
 
-        <nav className="text-center">
+        <nav>
           {Auth.loggedIn() ? (
             <>
               <Link to="/profile">Me</Link>
