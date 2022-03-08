@@ -1,8 +1,9 @@
 :root {
-  --primary: #08312f;
-  --secondary: #158376;
+  --primary: #2d4721;
+  --secondary: #034933;
   --tertiary: #b2c2c1;
   --quatrinary: #cadbda;
+  --quinary: #dae8bd;
   --light: #e1f5f4;
   --dark: #151616;
   --error: rgb(228, 46, 1);
@@ -31,7 +32,7 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  background-color: #f3fffee1;
+  background-color: #eae5e7;
 }
 
 h1,
@@ -97,7 +98,7 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--quinary);
 }
 
 .page-title {
@@ -115,7 +116,7 @@ nav a:hover {
   margin: 5px 0;
   border-radius: var(--border-radius);
   border: none;
-  color: var(--dark);
+  color: var(--quinary);
   outline: none;
   background-color: var(--secondary);
   transition: all 0.5s;
@@ -124,7 +125,7 @@ nav a:hover {
 .btn:hover,
 .pill:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--quinary);
 }
 
 .btn:hover a,
@@ -139,16 +140,19 @@ nav a:hover {
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
+  background:
+    linear-gradient(var(--light), var(--light)) padding-box,
+    linear-gradient(to right, #1d3822, #75c283) border-box;
+  border: 4px solid transparent;
   border-radius: var(--border-radius);
   background-color: var(--light);
   color: var(--dark);
 }
 
 .card-header {
-  color: var(--secondary);
+  color: var(--quinary);
   margin: 0;
-  background-color: var(--dark);
+  background-color: var(--secondary);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
@@ -768,6 +772,10 @@ nav a:hover {
   color: var(--quatrinary);
 }
 
+.text-quinary {
+  color: var(--quinary);
+}
+
 .text-light {
   color: var(--light);
 }
@@ -791,6 +799,14 @@ nav a:hover {
 
 .bg-tertiary {
   background-color: var(--tertiary);
+}
+
+.bg-quatrinary {
+  background-color: var(--quatrinary);
+}
+
+.bg-quinary {
+  background-color: var(--quatrinary);
 }
 
 .bg-light {
@@ -896,6 +912,11 @@ nav a:hover {
 
 .col-12 {
   flex: 0 0 100%;
+}
+
+/*EXTRA STYLES*/
+#user-profile-header-text {
+  border-radius: 3px;
 }
 
 /* col-sm */
