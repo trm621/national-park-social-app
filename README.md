@@ -6,7 +6,7 @@
 ![screenshot](/server/assets/)
 
 ## Installation/ Usage
-  * Deployed application via Heroku  https://agile-beach-04813.herokuapp.com/
+  * Deployed application via Heroku  https://pacific-shelf-58337.herokuapp.com/
   * Git Hub Repo: https://github.com/trm621/national-park-social-app
 
 ## Features
@@ -32,6 +32,7 @@
  ## Technology <br> 
   * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
   * MERN Stack: React front End, MongoDB database and Node.js/ Express.js server and API
+  * Chakra UI for formatting avatars 
   * HTML/ CSS/ JS 
 
 ## Packages Utilized
