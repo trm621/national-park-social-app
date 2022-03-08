@@ -16,7 +16,7 @@
 ## Features
  * Post your latest National Park Visit- include a photo, discuss the plan for a day trip or mutiple days, talk about the best scenic spot for the perfect instagram photo or a comfortable spot to enjoy the lunch you packed.  
  * Connect to Visit Parks with Friends and Others- coordinating a trip with your extended family or your college roomates, make sure nothing is forgotten and all the preferences of trail snack are covered, make new friends for those who want to connect with others to share the experience.  
- * Comment on Great Photos or Visitor Tips- Capture the sunrise over a beautiful mountain top share on Trail Talk, find a wildflower you can't identify then post a photo to ask others to help identify.
+ * Comment on Great Posts or Visitor Tips- Where to capture the sunrise over a beautiful mountain top share on Trail Talk, find a wildflower you have been looking for.
  * Connections to National Park Resources- did you know you can watch several activities live at national parks, click our links to explore interesting resources all in one place.
  * Make a Donation to Save The Parks- keep the parks a beautiful place to visit for years to come.  Every samll bit helps to assure the parks stay as beautiful as they can be.
 
