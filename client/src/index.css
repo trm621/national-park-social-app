@@ -1,5 +1,5 @@
 :root {
-  --primary: #08312f;
+  --primary: #073d1f;
   --secondary: #158376;
   --tertiary: #b2c2c1;
   --quatrinary: #cadbda;
@@ -23,6 +23,20 @@ body {
   min-height: 100%;
 }
 
+.header {
+  background-image: url('./assets/header-photo.jpg');
+  background-size: cover;
+  padding: 50px 90px 20px 0;
+  background-position: 90%;
+  color:#ffffff;
+}
+
+.header-container {
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -32,6 +46,12 @@ body {
   font-size: 20px;
   color: var(--dark);
   background-color: #f3fffee1;
+}
+
+.footer {
+  background-color: #073d1f;
+  color:#cadbda;
+  font-family:Georgia, 'Times New Roman', Times, serif
 }
 
 h1,
@@ -87,12 +107,14 @@ a:visited {
 nav {
   width: 100%;
   justify-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 nav a {
   padding: 6px 10px;
   margin: 0 15px;
   transition: all 0.2s;
+  font-size: 25px;
 }
 
 nav a:hover {
