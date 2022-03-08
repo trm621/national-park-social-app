@@ -5,11 +5,11 @@ import FriendList from '../components/FriendList';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHTS, QUERY_ME_BASIC } from '../utils/queries';
+import { QUERY_THOUGHTS, QUERY_ME } from '../utils/queries';//took away QUERY_ME_BASIC
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const { data: userData } = useQuery(QUERY_ME_BASIC);
+  const { data: userData } = useQuery(QUERY_ME);
   const thoughts = data?.thoughts || [];
 
   const loggedIn = Auth.loggedIn();
