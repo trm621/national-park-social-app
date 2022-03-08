@@ -8,18 +8,18 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
 
-import Feed from "./pages/Feed";
-import Login from "./pages/Login";
+// import Feed from "./pages/Feed";
+// import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Donation from "./pages/Donation";
-import Landing from "./pages/Landing";
+// import Donation from "./pages/Donation";
+// import Landing from "./pages/Landing";
 //import Profile from "./pages/Profile";
-import SinglePost from "./pages/SinglePost";
-import NoMatch from "./pages/NoMatch";
-import UserMain from "./pages/UserMain";
+// import SinglePost from "./pages/SinglePost";
+// import NoMatch from "./pages/NoMatch";
+// import UserMain from "./pages/UserMain";
 //import { Provider } from 'react-redux';
 //import store from './utils/store';
 
@@ -47,20 +47,20 @@ function App() {
     <ApolloProvider client={client}>
       <BrowserRouter>
         <div>
-          <Header />
+          {/*<Header />*/}
           <div>
             <Routes>
-              <Route path="/" element={<Landing />} />
+              {/*<Route path="/" element={<Landing />} />*/}
               <Route path="/signup" element={<Signup />} />
-              <Route path="/login" element={<Login />} />
+              {/*<Route path="/login" element={<Login />} />
               <Route path="/donations" element={<Donation />} />
               <Route path="/singlepost/:id" element={<SinglePost />} />
               <Route path="/usermain/:username?" element={<UserMain />} />
               <Route path="/feed" element={<Feed />} />
-              <Route path="*" element={<NoMatch />} />
+  <Route path="*" element={<NoMatch />} />*/}
             </Routes>
           </div>
-          <Footer />
+          {/*<Footer />*/}
         </div>
       </BrowserRouter>
     </ApolloProvider>
