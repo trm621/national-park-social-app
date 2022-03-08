@@ -1,10 +1,11 @@
 :root {
-  --primary: #073d1f;
-  --secondary: #158376;
+  --primary: #2d4721;
+  --secondary: #1A4314;
   --tertiary: #b2c2c1;
   --quatrinary: #cadbda;
+  --quinary: #B2D2A4;
   --light: #e1f5f4;
-  --dark: #151616;
+  --dark: #021a0f;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -29,6 +30,7 @@ body {
   padding: 50px 90px 20px 0;
   background-position: 90%;
   color:#ffffff;
+  border-bottom: 10px solid var(--secondary);
 }
 
 .header-container {
@@ -45,11 +47,11 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  background-color: #f3fffee1;
+  background-image: radial-gradient(white,#b2d9b6);
 }
 
 .footer {
-  background-color: #073d1f;
+  background-color: var(--secondary);
   color:#cadbda;
   font-family:Georgia, 'Times New Roman', Times, serif
 }
@@ -119,7 +121,7 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--quinary);
 }
 
 .page-title {
@@ -137,7 +139,7 @@ nav a:hover {
   margin: 5px 0;
   border-radius: var(--border-radius);
   border: none;
-  color: var(--dark);
+  color: var(--quinary);
   outline: none;
   background-color: var(--secondary);
   transition: all 0.5s;
@@ -146,7 +148,7 @@ nav a:hover {
 .btn:hover,
 .pill:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--quinary);
 }
 
 .btn:hover a,
@@ -161,16 +163,19 @@ nav a:hover {
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
+  background:
+    linear-gradient(var(--light), var(--light)) padding-box,
+    linear-gradient(to bottom right, #1d3822, #75c283) border-box;
+  border: 4px solid transparent;
   border-radius: var(--border-radius);
   background-color: var(--light);
   color: var(--dark);
 }
 
 .card-header {
-  color: var(--secondary);
+  color: var(--quinary);
   margin: 0;
-  background-color: var(--dark);
+  background-color: var(--secondary);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
@@ -790,6 +795,10 @@ nav a:hover {
   color: var(--quatrinary);
 }
 
+.text-quinary {
+  color: var(--quinary);
+}
+
 .text-light {
   color: var(--light);
 }
@@ -813,6 +822,14 @@ nav a:hover {
 
 .bg-tertiary {
   background-color: var(--tertiary);
+}
+
+.bg-quatrinary {
+  background-color: var(--quatrinary);
+}
+
+.bg-quinary {
+  background-color: var(--quatrinary);
 }
 
 .bg-light {
@@ -918,6 +935,11 @@ nav a:hover {
 
 .col-12 {
   flex: 0 0 100%;
+}
+
+/*EXTRA STYLES*/
+#user-profile-header-text {
+  border-radius: 3px;
 }
 
 /* col-sm */

@@ -22,6 +22,7 @@ const Header = () => {
             <>
               <Link to="/profile">Me</Link>
               <Link to="/about-us">About Us</Link>
+              <Link to="/donation">Donate</Link>
               <a href="/" onClick={logout}>
                 Logout
               </a>
@@ -31,7 +32,7 @@ const Header = () => {
               <Link to="/login">Login</Link>
               <Link to="/signup">Signup</Link>
               <Link to="/about-us">About Us</Link>
-              <Link to="/donation">Donation</Link>
+              <Link to="/donation">Donate</Link>
             </>
           )}
         </nav>
