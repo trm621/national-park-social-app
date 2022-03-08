@@ -51,7 +51,7 @@ body {
 }
 
 .footer {
-  background-color: #073d1f;
+  background-color: var(--secondary);
   color:#cadbda;
   font-family:Georgia, 'Times New Roman', Times, serif
 }
