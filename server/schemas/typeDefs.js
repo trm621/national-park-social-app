@@ -6,42 +6,44 @@ const typeDefs = gql`
     username: String
     email: String
     friendCount: Int
-    posts: [Post]
+    thoughts: [Thought]
     friends: [User]
+  }
 
-  }
-  type Post {
+  type Thought {
     _id: ID
-    postText: String
+    thoughtText: String
     createdAt: String
     username: String
-    commentCount: Int
-    comments: [Comment]
+    reactionCount: Int
+    reactions: [Reaction]
   }
-  type Comment {
+
+  type Reaction {
     _id: ID
-    commentBody: String
+    reactionBody: String
     createdAt: String
     username: String
   }
+
   type Auth {
     token: ID!
     user: User
   }
+
   type Query {
     me: User
     users: [User]
     user(username: String!): User
-    posts(username: String): [Post]
-    post(_id: ID!): Post
-    comments(username: String): [Comment]
-    comment(_id: ID!): Comment
+    thoughts(username: String): [Thought]
+    thought(_id: ID!): Thought
   }
+
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addPost(postText: String!): Post
-    addComment(commentId: ID!, commentBody: String!): Post
+    addThought(thoughtText: String!): Thought
+    addReaction(thoughtId: ID!, reactionBody: String!): Thought
     addFriend(friendId: ID!): User
   }
 `;

@@ -20,18 +20,10 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    bio: {
-      type: String,
-      required: false
-    },
-    donation: { //DO I NEED TO MAKE A DONATION COLLECTION AND REFERENCE IT IN THE USER SCHEMA?
-      type: Boolean,
-      amount: Number,
-    },
-    posts: [
+    thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Post'
+        ref: 'Thought'
       }
     ],
     friends: [
@@ -63,9 +55,9 @@ userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
 
-// userSchema.virtual('friendCount').get(function() {
-//   return this.friends.length;
-// });
+userSchema.virtual('friendCount').get(function() {
+  return this.friends.length;
+});
 
 const User = model('User', userSchema);
 
