@@ -1,7 +1,8 @@
 import React from "react";
 import { Redirect, useParams } from "react-router-dom";
-import { Avatar, AvatarBadge } from "@chakra-ui/react";
-import { Wrap, WrapItem } from '@chakra-ui/react'
+import { Avatar} from "@chakra-ui/react";
+// TO DO: AvatarBadge to show who is logged in 
+import { Wrap, WrapItem } from "@chakra-ui/react";
 import ThoughtForm from "../components/ThoughtForm";
 import ThoughtList from "../components/ThoughtList";
 import FriendList from "../components/FriendList";
@@ -48,7 +49,9 @@ const Profile = (props) => {
       console.error(e);
     }
   };
-
+//TO DO: Need to fix user.username is not working in avatar
+//<Avatar name='${user.username}' src="https://bit.ly/broken-link" />
+//<Avatar name='${user.friendname}' src="https://bit.ly/broken-link" />
   return (
     <div>
       <div className="flex-row mb-3">
@@ -58,33 +61,29 @@ const Profile = (props) => {
         >
           {userParam ? `${user.username}'s` : "Your"} Profile
         </h2>
-       
-        <Wrap>
-        <WrapItem> 
-        <Avatar name='Oshigaki Kisame' src='https://bit.ly/broken-link' />
-        </WrapItem> 
-  <WrapItem>
-    <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-  </WrapItem>
-  <WrapItem>
-    <Avatar name='Kola Tioluwani' src='https://bit.ly/tioluwani-kolawole' />
-  </WrapItem>
-  <WrapItem>
-    <Avatar name='Kent Dodds' src='https://bit.ly/kent-c-dodds' />
-  </WrapItem>
-  <WrapItem>
-    <Avatar name='Ryan Florence' src='https://bit.ly/ryan-florence' />
-  </WrapItem>
-  <WrapItem>
-    <Avatar name='Prosper Otemuyiwa' src='https://bit.ly/prosper-baba' />
-  </WrapItem>
-  <WrapItem>
-    <Avatar name='Christian Nwamba' src='https://bit.ly/code-beast' />
-  </WrapItem>
-  <WrapItem>
-    <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
-  </WrapItem>
-</Wrap>
+        <Wrap> 
+          <WrapItem>
+            <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
+          </WrapItem>
+          <WrapItem>
+            <Avatar
+              name="Kola Tioluwani"
+              src="https://bit.ly/tioluwani-kolawole"
+            />
+          </WrapItem>
+          <WrapItem>
+            <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
+          </WrapItem>
+          <WrapItem>
+            <Avatar name="Ryan Florence" src="https://bit.ly/ryan-florence" />
+          </WrapItem>
+          <WrapItem>
+            <Avatar
+              name="Prosper Otemuyiwa"
+              src="https://bit.ly/prosper-baba"
+            />
+            </WrapItem>
+        </Wrap>
 
         {userParam && (
           <button className="btn ml-auto" onClick={handleClick}>

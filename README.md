@@ -2,8 +2,12 @@
 # Trail Talk
 ### Trail Talk App will help you enjoy your National Park Visit even more.  Chatting with others who have experienced the park before then create a plan to enjoy the magnificence of what nature has to offer. Trail talk offers the features of a social application, posting photos, connecting to friends and family and getting feedback on your posts.  Given the size and opportunity for exploration at each park, you will never stop exploring national parks and will share your discovery in nature with those whose love nature as much as you do.  
 
-
-![screenshot](/server/assets/)
+* View Posts
+![screenshot](/server/assets/main.png)
+* Add Posts and Friends
+![screenshot](/server/assets/profile.png)
+* Donate
+![screenshot](/server/assets/stripe.png)
 
 ## Installation/ Usage
   * Deployed application via Heroku  https://pacific-shelf-58337.herokuapp.com/
