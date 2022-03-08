@@ -9,6 +9,8 @@ import StripeCheckout from 'react-stripe-checkout';
 
 // import { QUERY_ME_BASIC } from "../utils/queries";
 
+//use the QUERY_ME and not the basic---LEAH
+
 
 
 const Donation = () => {
