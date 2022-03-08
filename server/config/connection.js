@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/national-park-social-app', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/trail-talk', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }, err => {
