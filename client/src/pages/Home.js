@@ -1,28 +1,34 @@
 import React from 'react';
-import PostList from '../components/PostList';
+import ThoughtList from '../components/ThoughtList';
+import ThoughtForm from '../components/ThoughtForm';
 import FriendList from '../components/FriendList';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_POST, QUERY_ME_BASIC } from '../utils/queries';
+import { QUERY_THOUGHTS, QUERY_ME_BASIC } from '../utils/queries';
 
-const Landing = () => {
-  const { loading, data } = useQuery(QUERY_POST);
+const Home = () => {
+  const { loading, data } = useQuery(QUERY_THOUGHTS);
   const { data: userData } = useQuery(QUERY_ME_BASIC);
-  const posts = data?.posts || [];
+  const thoughts = data?.thoughts || [];
 
   const loggedIn = Auth.loggedIn();
-// should be able to add a comment on landing page?
+
   return (
     <main>
       <div className="flex-row justify-space-between">
+        {loggedIn && (
+          <div className="col-12 mb-3">
+            <ThoughtForm />
+          </div>
+        )}
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <PostList
-              posts={posts}
-              title="My most recent National Park Visit..."
+            <ThoughtList
+              thoughts={thoughts}
+              title="Some Feed for Thought(s)..."
             />
           )}
         </div>
@@ -40,4 +46,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Home;

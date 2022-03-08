@@ -1,27 +1,22 @@
-import * as React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-import Feed from "./pages/Feed";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Donation from "./pages/Donation";
-import Landing from "./pages/Landing";
-//import Profile from "./pages/Profile";
-import SinglePost from "./pages/SinglePost";
-import NoMatch from "./pages/NoMatch";
-import UserMain from "./pages/UserMain";
-//import { Provider } from 'react-redux';
-//import store from './utils/store';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import NoMatch from './pages/NoMatch';
+import SingleThought from './pages/SingleThought';
+import Profile from './pages/Profile';
+import Signup from './pages/Signup';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -45,24 +40,23 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
-        <div>
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
           <Header />
-          <div>
-            <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/donations" element={<Donation />} />
-              <Route path="/singlepost/:id" element={<SinglePost />} />
-              <Route path="/usermain/:username?" element={<UserMain />} />
-              <Route path="/feed" element={<Feed />} />
-              <Route path="*" element={<NoMatch />} />
-            </Routes>
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/profile/:username?" component={Profile} />
+              <Route exact path="/thought/:id" component={SingleThought} />
+
+              <Route component={NoMatch} />
+            </Switch>
           </div>
           <Footer />
         </div>
-      </BrowserRouter>
+      </Router>
     </ApolloProvider>
   );
 }
