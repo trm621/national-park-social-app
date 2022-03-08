@@ -1,12 +1,9 @@
 const jwt = require('jsonwebtoken');
 
-// set token secret and expiration date  
-//THIS MAY NEED TO GO IN A .ENV??
 const secret = 'mysecretsshhhhh';
 const expiration = '2h';
 
 module.exports = {
-  // function for our authenticated routes
   authMiddleware: function({ req }) {
     // allows token to be sent via req.body, req.query, or headers
     let token = req.body.token || req.query.token || req.headers.authorization;
@@ -14,21 +11,20 @@ module.exports = {
     // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
       token = token
-      .split(' ')
-      .pop()
-      .trim();
+        .split(' ')
+        .pop()
+        .trim();
     }
 
     if (!token) {
       return req;
     }
 
-    // verify token and get user data out of it
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
-    } catch (err) {
-      console.log(err);//WHY DOES THIS THROW AN ERROR EVERY TIME SOMEONE SIGNS UP??
+    } catch {
+      console.log('Invalid token');
     }
 
     return req;

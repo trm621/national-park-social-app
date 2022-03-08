@@ -47,6 +47,3 @@
  * React Scripts, React DOM, React Router DOM
  * Stripe
  * JWT- Decode
-
-
-
