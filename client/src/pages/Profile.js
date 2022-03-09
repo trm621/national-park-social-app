@@ -1,11 +1,12 @@
 import React from "react";
 import { Redirect, useParams } from "react-router-dom";
-import { Avatar} from "@chakra-ui/react";
+import { Avatar, AvatarGroup, AvatarBadge} from "@chakra-ui/react";
 // TO DO: AvatarBadge to show who is logged in 
 import { Wrap, WrapItem } from "@chakra-ui/react";
 import ThoughtForm from "../components/ThoughtForm";
 import ThoughtList from "../components/ThoughtList";
 import FriendList from "../components/FriendList";
+import CreateList from "./CreateList"
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
@@ -61,6 +62,7 @@ const Profile = (props) => {
         >
           {userParam ? `${user.username}'s` : "Your"} Profile
         </h2>
+        <AvatarGroup spacing="3rem">
         <Wrap> 
           <WrapItem>
             <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
@@ -70,6 +72,7 @@ const Profile = (props) => {
               name="Kola Tioluwani"
               src="https://bit.ly/tioluwani-kolawole"
             />
+           
           </WrapItem>
           <WrapItem>
             <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
@@ -79,12 +82,16 @@ const Profile = (props) => {
           </WrapItem>
           <WrapItem>
             <Avatar
+            
               name="Prosper Otemuyiwa"
               src="https://bit.ly/prosper-baba"
             />
             </WrapItem>
         </Wrap>
-
+        <Avatar>
+        <AvatarBadge boxSize='1.25em' bg='green.500' />
+        </Avatar>
+        </AvatarGroup>
         {userParam && (
           <button className="btn ml-auto" onClick={handleClick}>
             Add Friend
@@ -99,7 +106,7 @@ const Profile = (props) => {
             title={`${user.username}'s posts...`}
           />
         </div>
-
+        
         <div className="col-12 col-lg-3 mb-3">
           <FriendList
             username={user.username}
@@ -109,6 +116,9 @@ const Profile = (props) => {
         </div>
       </div>
       <div className="mb-3">{!userParam && <ThoughtForm />}</div>
+      <div>
+      <CreateList />
+      </div>
     </div>
   );
 };
