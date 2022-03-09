@@ -6,6 +6,7 @@ import { Wrap, WrapItem } from "@chakra-ui/react";
 import ThoughtForm from "../components/ThoughtForm";
 import ThoughtList from "../components/ThoughtList";
 import FriendList from "../components/FriendList";
+import CreateList from "./CreateList"
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
@@ -105,7 +106,7 @@ const Profile = (props) => {
             title={`${user.username}'s posts...`}
           />
         </div>
-
+        
         <div className="col-12 col-lg-3 mb-3">
           <FriendList
             username={user.username}
@@ -115,6 +116,9 @@ const Profile = (props) => {
         </div>
       </div>
       <div className="mb-3">{!userParam && <ThoughtForm />}</div>
+      <div>
+      <CreateList />
+      </div>
     </div>
   );
 };

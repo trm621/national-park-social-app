@@ -14,7 +14,7 @@ function BucketList({ todos, deleteTodo }) {
   if (!todos.length) {
     return (
       <Badge colorScheme='green' p='4' m='4' borderRadius='lg'>
-        Create your National Park Visit Soon List!
+        Start Today: Create your National Park Visit List!
       </Badge>
     );
   }

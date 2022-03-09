@@ -30,9 +30,9 @@ function CreateList() {
       <Heading
         mb='8'
         fontWeight='extrabold'
-        size='2xl'
+        size='l'
       >
-        BucketList
+        National Park Visit List
       </Heading>
       <BucketList todos={todos} deleteTodo={deleteTodo} />
       <AddTobucket addTodo={addTodo} />
