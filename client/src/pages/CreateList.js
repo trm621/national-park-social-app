@@ -1,6 +1,7 @@
-import { Heading } from '@chakra-ui/react';
+
 import BucketList from '../components/BucketList';
 import AddTobucket from '../components/AddTobucket';
+import UploadImage from '../components/UploadImage'
 import { VStack } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 
@@ -24,18 +25,11 @@ function CreateList() {
   function addTodo(todo) {
     setTodos([...todos, todo]);
   }
-//bgGradient='linear(to-r, green.600, green.800, grey.800)'
   return (
-    <VStack p={4}>
-      <Heading
-        mb='8'
-        fontWeight='extrabold'
-        size='l'
-      >
-        National Park Visit List
-      </Heading>
+    <VStack>
       <BucketList todos={todos} deleteTodo={deleteTodo} />
       <AddTobucket addTodo={addTodo} />
+      <UploadImage />
     </VStack>
   );
 }

@@ -17,6 +17,7 @@ function BucketList({ todos, deleteTodo }) {
         Start Today: Create your National Park Visit List!
       </Badge>
     );
+
   }
 
   return (
@@ -30,6 +31,9 @@ function BucketList({ todos, deleteTodo }) {
       maxW={{ base: '90vw', sm: '80vw', lg: '50vw', xl: '40vw' }}
       alignItems='stretch'
     >
+      <Badge colorScheme='green' p='4' m='4' borderRadius='lg'>
+        Add More Great National Parks to Your Visit List!
+      </Badge>
       {todos.map((todo) => (
         <HStack key={todo.id}>
           <Text>{todo.body}</Text>
