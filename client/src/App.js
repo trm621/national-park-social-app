@@ -19,6 +19,7 @@ import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Donation from './pages/Donation'
 import About from './pages/About';
+import Bucket from './pages/CreateList';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -54,6 +55,7 @@ function App() {
               <Route exact path="/thought/:id" component={SingleThought} />
               <Route exact path="/donation" component={Donation} />
               <Route exact path="/about-us" component={About} />
+              <Route exact path="/bucket" component={Bucket} />
               <Route component={NoMatch} />
             </Switch>
           </div>
