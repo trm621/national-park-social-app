@@ -51,4 +51,5 @@
  * Apollo Client
  * React Scripts, React DOM, React Router DOM
  * Stripe
+ * Chakura
  * JWT- Decode
