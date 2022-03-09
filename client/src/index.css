@@ -31,6 +31,7 @@ body {
   background-position: 90%;
   color:#ffffff;
   border-bottom: 10px solid var(--secondary);
+  margin-bottom: 20px;
 }
 
 .header-container {
