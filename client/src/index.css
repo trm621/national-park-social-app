@@ -1124,6 +1124,7 @@ nav a:hover {
   .align-center-md {
     align-items: center;
   }
+
 }
 
 /* col-lg */
@@ -1221,6 +1222,7 @@ nav a:hover {
   .align-center-lg {
     align-items: center;
   }
+
 }
 
 /* col-xl */
@@ -1303,5 +1305,26 @@ nav a:hover {
 
   .align-center-xl {
     align-items: center;
+  }
+}
+
+@media screen and (max-width:1196px) {
+
+  .header {
+    background-size: inherit;
+    padding: 0px;
+  }
+
+  .header-container {
+    display: block;
+    text-align: center;
+    padding: none;
+  }
+}
+
+@media screen and (max-width:607px) {
+
+  nav a {
+    display: block;
   }
 }
