@@ -10,7 +10,7 @@
 ![screenshot](/server/assets/stripe.png)
 
 ## Installation/ Usage
-  * Deployed application via Heroku  https://pacific-shelf-58337.herokuapp.com/
+  * Deployed application via Render  https://national-park-social-app-afnj.onrender.com/
   * Git Hub Repo: https://github.com/trm621/national-park-social-app
 
 ## Features
